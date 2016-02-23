@@ -35,7 +35,7 @@ func main() {
 	channel := make(chan string, 1)
 
 	go ponger(channel)
+	go asker(channel, done)
 
-	asker(channel, done)
 	<-done
 }
