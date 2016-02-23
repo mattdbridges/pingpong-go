@@ -27,6 +27,8 @@ func asker(pinger chan<- string, done chan<- bool) {
 		asker(pinger, done)
 	case "exit":
 		done <- true
+	default:
+		asker(pinger, done)
 	}
 }
 
